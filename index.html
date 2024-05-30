@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+    <script src="./serviceworker-register.js"></script>
+    <script src="./install.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Projekt - Programowanie urządzeń mobilnych."
+    />
+    <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,6 +27,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <button type="button" class="ad2hs-prompt">Install Web App</button>
     <div class="ios-prompt">
       <span
         style="
@@ -60,8 +71,6 @@
     </div>
 
     <script src="./script.js"></script>
-    <script src="./serviceworker-register.js"></script>
-    <script src="./install.js"></script>
     <script src="./install_ios.js"></script>
   </body>
 </html>
