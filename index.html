@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
   <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -16,13 +17,51 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="ios-prompt">
+      <span
+        style="
+          color: rgb(187, 187, 187);
+          float: right;
+          margin-top: -14px;
+          margin-right: -11px;
+        "
+        >&times;</span
+      >
+      <img
+        src="img/add2home.jpg"
+        style="
+          float: left;
+          height: 60px;
+          width: auto;
+          margin-top: -8px;
+          margin-right: 1rem;
+        "
+      />
+      <p style="margin-top: -3px; line-height: 1.3rem">
+        Aby zainstalować tą aplikację na twoim iPhone/iPad naciśnij
+        <img
+          src="img/sharebuttonsafari.jpg"
+          style="
+            display: inline-block;
+            margin-top: 4px;
+            margin-bottom: -4px;
+            height: 20px;
+            width: auto;
+          "
+        />
+        i później <b>Do ekranu początkowego.</b>
+      </p>
+    </div>
     <div class="container">
       <h1>Prędkość</h1>
       <p>Prędkość: <span id="speed-kmh">0</span> km/h</p>
       <p>Przyspieszenie: <span id="acceleration">0</span> m/s²</p>
-      <canvas id="speedometer" width="250" height="250"></canvas>
+      <canvas id="speedometer" width="300" height="300"></canvas>
     </div>
 
     <script src="script.js"></script>
+    <script src="/serviceworker-register.js"></script>
+    <script src="/install.js"></script>
+    <script src="/install_ios.js"></script>
   </body>
 </html>
