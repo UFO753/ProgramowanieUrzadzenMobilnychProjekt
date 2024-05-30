@@ -26,3 +26,22 @@ p {
 canvas {
   margin-top: 20px;
 }
+
+.ios-prompt {
+  font-family: "Roboto", sans-serif;
+  background-color: #fcfcfc;
+  border: 1px solid #666;
+  display: none;
+  padding: 0.8rem 1rem 0 0.5rem;
+  text-decoration: none;
+  font-size: 16px;
+  color: rgb(36, 36, 36);
+  position: fixed;
+  left: 8px;
+  right: 8px;
+  min-height: 70px;
+  height: auto;
+  max-height: 140px;
+  bottom: 10px;
+  z-index: 4;
+}
