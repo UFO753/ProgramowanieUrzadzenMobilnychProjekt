@@ -1,12 +1,14 @@
 {
   "lang": "pl",
   "name": "Prędkościomierz app",
-  "short_name": "SpeedApp",
-  "start_url": "./index.html",
+  "scope": "/",
   "display": "standalone",
+  "start_url": "./index.html",
+  "short_name": "SpeedApp",
   "background_color": "#ffffff",
   "theme_color": "#000000",
   "description": "Wojciech Charkiewicz 164595 Projekt - Programowanie urządzeń mobilnych.",
+  "orientation": "any",
   "icons": [
     {
       "src": "icon-192x192.png",
