@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prędkość i Przyspieszenie</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        text-align: center;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        margin-bottom: 20px;
+      }
+      p {
+        font-size: 1.2em;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prędkość i Przyspieszenie</h1>
+      <p>Prędkość: <span id="speed">0</span> m/s</p>
+      <p>Przyspieszenie: <span id="acceleration">0</span> m/s²</p>
+    </div>
+
+    <script>
+      if ("geolocation" in navigator) {
+        navigator.geolocation.watchPosition(
+          (position) => {
+            const speed = position.coords.speed || 0;
+            document.getElementById("speed").textContent = speed.toFixed(2);
+          },
+          (error) => {
+            console.error(error);
+          },
+          {
+            enableHighAccuracy: true,
+          }
+        );
+      } else {
+        alert("Twoje urządzenie nie obsługuje geolokalizacji.");
+      }
+
+      if (window.DeviceMotionEvent) {
+        window.addEventListener("devicemotion", (event) => {
+          const acc = event.acceleration;
+          const acceleration = Math.sqrt(acc.x ** 2 + acc.y ** 2 + acc.z ** 2);
+          document.getElementById("acceleration").textContent =
+            acceleration.toFixed(2);
+        });
+      } else {
+        alert("Twoje urządzenie nie obsługuje wykrywania ruchu.");
+      }
+    </script>
+  </body>
+</html>
