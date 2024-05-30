@@ -21,28 +21,6 @@ function drawSpeedometer(speedKmh) {
   canvascontext.lineWidth = 10;
   canvascontext.stroke();
 
-  for (let i = 0; i <= maxSpeed; i += 20) {
-    let angle = (i / maxSpeed) * (Math.PI * 1.5) + 0.75 * Math.PI;
-    let x1 = centerX + (radius - 10) * Math.cos(angle);
-    let y1 = centerY + (radius - 10) * Math.sin(angle);
-    let x2 = centerX + (radius - 30) * Math.cos(angle);
-    let y2 = centerY + (radius - 30) * Math.sin(angle);
-    canvascontext.beginPath();
-    canvascontext.moveTo(x1, y1);
-    canvascontext.lineTo(x2, y2);
-    canvascontext.strokeStyle = "#000";
-    canvascontext.lineWidth = 2;
-    canvascontext.stroke();
-    canvascontext.font = "12px Roboto";
-    canvascontext.fillStyle = "#000";
-    canvascontext.textAlign = "center";
-    canvascontext.fillText(
-      i,
-      centerX + (radius - 40) * Math.cos(angle),
-      centerY + (radius - 40) * Math.sin(angle)
-    );
-  }
-
   const angle = (speedKmh / maxSpeed) * (Math.PI * 1.5) + 0.75 * Math.PI;
   canvascontext.beginPath();
   canvascontext.moveTo(radius, radius);
