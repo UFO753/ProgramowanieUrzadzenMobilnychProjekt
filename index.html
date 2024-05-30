@@ -3,68 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Prędkość i Przyspieszenie</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #f0f0f0;
-      }
-      .container {
-        text-align: center;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
-        margin-bottom: 20px;
-      }
-      p {
-        font-size: 1.2em;
-        margin: 10px 0;
-      }
-    </style>
+    <title>
+      Wojciech Charkiewicz 164595 Projekt - Programowanie urządzeń mobilnych.
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="container">
-      <h1>Prędkość i Przyspieszenie</h1>
-      <p>Prędkość: <span id="speed">0</span> m/s</p>
+      <h1>Prędkość</h1>
+      <p>Prędkość: <span id="speed-kmh">0</span> km/h</p>
       <p>Przyspieszenie: <span id="acceleration">0</span> m/s²</p>
+      <canvas id="speedometer" width="300" height="300"></canvas>
     </div>
 
-    <script>
-      if ("geolocation" in navigator) {
-        navigator.geolocation.watchPosition(
-          (position) => {
-            const speed = position.coords.speed || 0;
-            document.getElementById("speed").textContent = speed.toFixed(2);
-          },
-          (error) => {
-            console.error(error);
-          },
-          {
-            enableHighAccuracy: true,
-          }
-        );
-      } else {
-        alert("Twoje urządzenie nie obsługuje geolokalizacji.");
-      }
-
-      if (window.DeviceMotionEvent) {
-        window.addEventListener("devicemotion", (event) => {
-          const acc = event.acceleration;
-          const acceleration = Math.sqrt(acc.x ** 2 + acc.y ** 2 + acc.z ** 2);
-          document.getElementById("acceleration").textContent =
-            acceleration.toFixed(2);
-        });
-      } else {
-        alert("Twoje urządzenie nie obsługuje wykrywania ruchu.");
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
