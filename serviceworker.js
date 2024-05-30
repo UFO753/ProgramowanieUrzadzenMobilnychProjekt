@@ -1,15 +1,15 @@
 const PRECACHE = "Speed_app_v1";
 const RUNTIME = "runtime";
 const PRECACHE_URLS = [
-  "/",
-  "/index.html",
-  "/manifest.json",
-  "/serviceworker-register.js",
-  "/serviceworker.js",
-  "/script.js",
-  "/style.css",
-  "/icon-192x192.png",
-  "/icon-512x512.png",
+  "./",
+  "./index.html",
+  "./manifest.json",
+  "./serviceworker-register.js",
+  "./serviceworker.js",
+  "./script.js",
+  "./style.css",
+  "./icon-192x192.png",
+  "./icon-512x512.png",
 ];
 
 self.addEventListener("install", (event) => {
