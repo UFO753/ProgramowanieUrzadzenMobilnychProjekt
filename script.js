@@ -55,8 +55,6 @@ function drawSpeedometer(speedKmh) {
   canvascontext.strokeStyle = "#f00";
   canvascontext.lineWidth = 5;
   canvascontext.stroke();
-
-  // Draw the speed text
   canvascontext.font = "16px Arial";
   canvascontext.fillStyle = "#000";
   canvascontext.textAlign = "center";
@@ -98,7 +96,8 @@ if ("geolocation" in navigator) {
 if (window.DeviceMotionEvent) {
   window.addEventListener("devicemotion", (event) => {
     const acc = event.accelerationIncludingGravity;
-    const acceleration = Math.sqrt(acc.x ** 2 + acc.y ** 2 + acc.z ** 2);
+    const acceleration =
+      Math.sqrt(acc.x ** 2 + acc.y ** 2 + acc.z ** 2) - 9.80665;
     accelerationElement.textContent = acceleration.toFixed(2);
   });
 } else {
